@@ -58,6 +58,8 @@ dependencies {
             publications {
                 register("release", MavenPublication::class.java) {
                     from(components["release"])
+                    groupId = "com.github.hoangchungk53qx1"
+                    artifactId = "mqtt-manager"
                 }
             }
         }
