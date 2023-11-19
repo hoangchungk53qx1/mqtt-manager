@@ -98,7 +98,7 @@ object MqttManager : MqttListener {
             .stateIn(
                 scope = receiveScope,
                 started = SharingStarted.Eagerly,
-                initialValue = MqttMessage("", "")
+                initialValue = MqttMessage(null, null)
             )
 
     /**
