@@ -1,6 +1,6 @@
 # MqttManager
 
-MqttManager for Android,Connect and Subscrible Topic , retry 
+MqttManager for Android, helps easily manage created clients with methods such as connect, subscrible, unsubcrible Topic
 
 The MQTT Android Service is an MQTT client library written in Kotlin.
 It has been created to provide reliable open-source implementations of open and standard messaging protocols aimed at new, existing, and emerging
