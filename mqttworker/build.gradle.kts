@@ -1,6 +1,10 @@
+import com.vanniktech.maven.publish.SonatypeHost
+
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
+    id("com.vanniktech.maven.publish")
 }
 
 android {
@@ -48,4 +52,18 @@ dependencies {
     implementation ("androidx.legacy:legacy-support-v4:1.0.0")
     implementation ("com.github.hannesa2:paho.mqtt.android:4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+
+    afterEvaluate {
+        publishing {
+            publications {
+                register("release", MavenPublication::class.java) {
+                    from(components["release"])
+                }
+            }
+        }
+    }
+    mavenPublishing {
+        publishToMavenCentral(SonatypeHost.S01, true)
+        signAllPublications()
+    }
 }
