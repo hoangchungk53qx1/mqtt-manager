@@ -64,6 +64,12 @@ class MainViewModel : ViewModel() {
         )
     }
 
+    fun subscribeTopic(topic: String) {
+        MqttManager.subscribeListTopic(
+            topics = listOf(element = Topic(topic = topic, qos = Topic.Qos.QOS_2))
+        )
+    }
+
     companion object {
         private const val TAG = "MainViewModel"
     }

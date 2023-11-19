@@ -116,23 +116,19 @@ object MqttManager : MqttListener {
      * subscribe to MQTT
      * @param topics List<Topic>
      */
-    override fun subscribeListTopic(topics: List<Topic>) {
+    override fun subscribeListTopic(topics: List<Topic>) =
         MqttWorkerListener.run { instance.subscribeListTopic(topics = topics) }
-    }
 
     /**
      * unsubscribe to MQTT
      * @param topics List<Topic>
      */
-    override fun unSubscribeListTopic(topics: List<Topic>) {
+    override fun unSubscribeListTopic(topics: List<Topic>) =
         MqttWorkerListener.run { instance.unSubscribeListTopic(topics = topics) }
-    }
 
     /**
      * Disconnect
      */
-    override fun disconnect() {
-        MqttWorkerListener.instance.disconnect()
-    }
+    override fun disconnect() = MqttWorkerListener.instance.disconnect()
 
 }

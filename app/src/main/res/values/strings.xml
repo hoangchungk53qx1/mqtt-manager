@@ -4,4 +4,7 @@
     <string name="input_user_name">Input user name</string>
     <string name="input_password">Input Password</string>
     <string name="connect">Connect</string>
+    <string name="subscribe_topic">Subscribe Topic</string>
+    <string name="input_topic">Input Topic</string>
+    <string name="status_name">Status Connect : %1$s</string>
 </resources>

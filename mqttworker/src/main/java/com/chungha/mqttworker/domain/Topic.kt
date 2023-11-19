@@ -1,4 +1,3 @@
-package com.chungha.mqttworker.domain
 /*
  * MIT License
  *
@@ -23,9 +22,13 @@ package com.chungha.mqttworker.domain
  * SOFTWARE.
  */
 
+package com.chungha.mqttworker.domain
+
 /**
  *  QOS_0(0), At most once, may be repeated or lost
+ *
  *  QOS_1(1), At least once, may be repeated
+ *
  *  QOS_2(2), Only once, ensure that the message only arrives once (for stricter billing systems)
  */
 

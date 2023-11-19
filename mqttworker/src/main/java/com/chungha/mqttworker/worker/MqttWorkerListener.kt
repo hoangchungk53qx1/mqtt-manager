@@ -77,9 +77,13 @@ internal class MqttWorkerListener : MqttListener {
     override fun subscribeListTopic(topics: List<Topic>) {
         try {
             if (MqttManager.currentStatusConnect == CONNECTED) {
+                // Get topic and qos
+                val topic = topics.map { it.topic }.toTypedArray()
+                val qos = topics.map { it.qos.value }.toIntArray()
+
                 mClient?.subscribe(
-                    topic = topics.map { it.topic }.toTypedArray(),
-                    qos = topics.map { it.qos.value }.toIntArray(),
+                    topic = topic,
+                    qos = qos,
                     userContext = null,
                     callback = object : IMqttActionListener {
                         override fun onSuccess(asyncActionToken: IMqttToken?) {

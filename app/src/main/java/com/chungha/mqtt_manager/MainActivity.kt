@@ -30,6 +30,12 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
+        binding.btnSubscribeTopic.setOnClickListener {
+            viewModel.subscribeTopic(
+                topic = binding.inputTopic.text.toString()
+            )
+        }
+
         MqttManager.messageState
             .onEach(::renderMessage)
             .launchIn(lifecycleScope)
@@ -46,7 +52,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun renderStatus(status: MqttConnectStatus) {
-        binding.tvStatusConnection.text = status.name
+        binding.tvStatusConnection.text = getString(R.string.status_name, status)
     }
 
 }
