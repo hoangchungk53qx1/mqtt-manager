@@ -23,7 +23,7 @@ MQTT reflects the inherent physical and cost constraints of device connectivity.
 ```
 MIT License
 
-Copyright (c) 2021 hoangchungk53qx1
+Copyright (c) 2023 hoangchungk53qx1
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
