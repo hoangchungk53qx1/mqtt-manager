@@ -31,7 +31,7 @@ jobs:
       run: chmod +x ./gradlew
 
     - name: Build release
-      run: ./gradlew :mqtt_worker:assembleRelease
+      run: ./gradlew :mqttworker:assembleRelease
 
     - name: Publish release
       run: ./gradlew publish --stacktrace
