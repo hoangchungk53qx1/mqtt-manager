@@ -89,7 +89,7 @@ object MqttManager : MqttListener {
     }
 
     /**
-     * Get subscription message Flow from callback
+     * Get subscription message Flow from callback received
      * @return StateFlow<MqttMessage>
      */
     val messageState: StateFlow<MqttMessage>
