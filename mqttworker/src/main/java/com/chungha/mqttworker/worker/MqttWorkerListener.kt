@@ -125,14 +125,15 @@ internal class MqttWorkerListener : MqttListener {
 
     override fun disconnect() {
         mClient?.apply {
-            if (isConnected) disconnect()
+            if (isConnected) {
+                disconnect()
+                MqttManager.updateStatusConnect(DISCONNECTED)
+            }
         }
         mClient?.unregisterResources()
         mClient?.close()
         mClient = null
         mOptions = null
-        MqttManager.updateStatusConnect(DISCONNECTED)
-
     }
 
     private fun doConnect() {

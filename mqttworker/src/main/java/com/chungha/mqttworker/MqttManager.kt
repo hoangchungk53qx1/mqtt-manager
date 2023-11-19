@@ -70,7 +70,7 @@ object MqttManager : MqttListener {
      * Get the current MQTT connection status
      * @return MqttConnectStatus
      */
-    val currentStatusConnect: MqttConnectStatus
+    internal val currentStatusConnect: MqttConnectStatus
         get() = connectStatusFlow.value
 
     /**
@@ -106,12 +106,11 @@ object MqttManager : MqttListener {
      * @param context Context
      * @param options MqttClientOptions
      */
-    override fun connect(context: Context, options: MqttClientOptions) {
+    override fun connect(context: Context, options: MqttClientOptions) =
         MqttWorkerListener.instance.connect(
             context = context,
             options = options
         )
-    }
 
     /**
      * subscribe to MQTT

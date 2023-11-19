@@ -30,6 +30,10 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
@@ -43,4 +47,5 @@ dependencies {
 
     implementation ("androidx.legacy:legacy-support-v4:1.0.0")
     implementation ("com.github.hannesa2:paho.mqtt.android:4.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 }

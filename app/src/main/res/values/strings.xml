@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MqttManager</string>
+    <string name="input_host">Input Host</string>
+    <string name="input_user_name">Input user name</string>
+    <string name="input_password">Input Password</string>
+    <string name="connect">Connect</string>
 </resources>
