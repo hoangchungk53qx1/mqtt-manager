@@ -28,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "11"
     }
 
     buildFeatures {
@@ -63,7 +63,9 @@ dependencies {
         }
     }
     mavenPublishing {
-        publishToMavenCentral(SonatypeHost.S01, true)
+        // or when publishing to https://s01.oss.sonatype.org
+        publishToMavenCentral(SonatypeHost.S01)
+
         signAllPublications()
     }
 }
