@@ -40,11 +40,11 @@ android {
     }
 
     publishing {
-        singleVariant("release") {
+        multipleVariants {
             withSourcesJar()
             withJavadocJar()
+            allVariants()
         }
-        // ...
     }
 }
 
@@ -80,12 +80,41 @@ dependencies {
       publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
       signAllPublications()
     }
-
     publishing {
         repositories {
             maven {
                 name = "mqtt-manager"
                 url = uri(layout.buildDirectory.dir("mqttworker"))
+            }
+        }
+    }
+
+    mavenPublishing {
+        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "0.0.1")
+
+        pom {
+            name.set("mqtt-manager")
+            description.set("A description of what my library does.")
+            inceptionYear.set("2020")
+            url.set("https://github.com/hoangchungk53qx1/mqtt-manager/tree/main/mqttworker")
+            licenses {
+                license {
+                    name.set("The Apache License, Version 2.0")
+                    url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                    distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                }
+            }
+            developers {
+                developer {
+                    id.set("hoangchungk53qx1")
+                    name.set("hoanganhchung")
+                    url.set("https://github.com/hoangchungk53qx1/")
+                }
+            }
+            scm {
+                url.set("https://github.com/hoangchungk53qx1/mqtt-manager.git")
+                connection.set("https://github.com/hoangchungk53qx1/mqtt-manager.git")
+                developerConnection.set("https://github.com/hoangchungk53qx1/mqtt-manager.git")
             }
         }
     }
