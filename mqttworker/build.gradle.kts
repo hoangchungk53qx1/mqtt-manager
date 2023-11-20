@@ -98,7 +98,7 @@ dependencies {
             name.set("mqtt-manager")
             description.set("A description of what my library does.")
             inceptionYear.set("2020")
-            url.set("https://github.com/hoangchungk53qx1/mqtt-manager/tree/main/mqttworker")
+            url.set("https://github.com/hoangchungk53qx1/mqtt-manager")
             licenses {
                 license {
                     name.set("The Apache License, Version 2.0")
@@ -113,6 +113,7 @@ dependencies {
                     url.set("https://github.com/hoangchungk53qx1/")
                 }
             }
+
             scm {
                 url.set("scm:git:git://github.com/hoangchungk53qx1/mqtt-manager.git")
                 connection.set("scm:git:ssh://github.com/hoangchungk53qx1/mqtt-manager")
