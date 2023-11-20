@@ -61,26 +61,23 @@ dependencies {
     implementation ("androidx.legacy:legacy-support-v4:1.0.0")
     implementation ("com.github.hannesa2:paho.mqtt.android:4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
+//
+//    publishing {
+//        // Configure publishing data
+//        publications {
+//            register("release", MavenPublication::class.java) {
+//                groupId = "io.github.hoangchungk53qx1"
+//                artifactId = "mqtt-manager"
+//                version = System.getenv("1.0.0")
+//
+//                afterEvaluate {
+//                    from(components["release"])
+//                }
+//            }
+//        }
+//    }
 
-    publishing {
-        // Configure publishing data
-        publications {
-            register("release", MavenPublication::class.java) {
-                groupId = "io.github.hoangchungk53qx1"
-                artifactId = "mqtt-manager"
-                version = System.getenv("1.0.0")
 
-                afterEvaluate {
-                    from(components["release"])
-                }
-            }
-        }
-    }
-
-    mavenPublishing {
-        publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
-        signAllPublications()
-    }
 
 //    publishing {
 //        repositories {
@@ -92,13 +89,18 @@ dependencies {
 //    }
 
     mavenPublishing {
-        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "1.0.1")
+        publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+        signAllPublications()
+    }
+
+    mavenPublishing {
+        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "1.0.5")
 
         pom {
             name.set("mqtt-manager")
             description.set("A description of what my library does.")
             inceptionYear.set("2020")
-            url.set("https://github.com/hoangchungk53qx1/mqtt-manager")
+            url.set("https://github.com/hoangchungk53qx1/mqtt-manager/tree/main/mqttworker")
             licenses {
                 license {
                     name.set("The Apache License, Version 2.0")
@@ -113,7 +115,6 @@ dependencies {
                     url.set("https://github.com/hoangchungk53qx1/")
                 }
             }
-
             scm {
                 url.set("scm:git:git://github.com/hoangchungk53qx1/mqtt-manager.git")
                 connection.set("scm:git:ssh://github.com/hoangchungk53qx1/mqtt-manager")
