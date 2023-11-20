@@ -64,10 +64,10 @@ dependencies {
             }
         }
     }
-    mavenPublishing {
-        // or when publishing to https://s01.oss.sonatype.org
-        publishToMavenCentral(SonatypeHost.S01)
 
-        signAllPublications()
+    mavenPublishing {
+      publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+      signAllPublications()
     }
+
 }
