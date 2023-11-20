@@ -38,6 +38,14 @@ android {
     buildFeatures {
         buildConfig = true
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+        // ...
+    }
 }
 
 dependencies {
@@ -53,13 +61,16 @@ dependencies {
     implementation ("com.github.hannesa2:paho.mqtt.android:4.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
-    afterEvaluate {
-        publishing {
-            publications {
-                register("release", MavenPublication::class.java) {
+    publishing {
+        // Configure publishing data
+        publications {
+            register("release", MavenPublication::class.java) {
+                groupId = "io.github.hoangchungk53qx1"
+                artifactId = "mqtt-manager"
+                version = System.getenv("1.0.0")
+
+                afterEvaluate {
                     from(components["release"])
-                    groupId = "com.github.hoangchungk53qx1"
-                    artifactId = "mqtt-manager"
                 }
             }
         }
@@ -70,32 +81,11 @@ dependencies {
       signAllPublications()
     }
 
-    mavenPublishing {
-        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "0.0.1")
-
-        pom {
-            name.set("mqtt-manager")
-            description.set("A description of what my library does.")
-            inceptionYear.set("2020")
-            url.set("https://github.com/hoangchungk53qx1/mqtt-manager/")
-            licenses {
-                license {
-                    name.set("The Apache License, Version 2.0")
-                    url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                    distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                }
-            }
-            developers {
-                developer {
-                    id.set("hoangchungk53qx1")
-                    name.set("hoangchungk53qx1")
-                    url.set("https://github.com/hoangchungk53qx1/")
-                }
-            }
-            scm {
-                url.set("https://github.com/hoangchungk53qx1/mqtt-manager.git")
-                connection.set("https://github.com/hoangchungk53qx1/mqtt-manager.git")
-                developerConnection.set("https://github.com/hoangchungk53qx1/mqtt-manager.git")
+    publishing {
+        repositories {
+            maven {
+                name = "mqtt-manager"
+                url = uri(layout.buildDirectory.dir("mqttworker"))
             }
         }
     }
