@@ -94,12 +94,12 @@ dependencies {
     }
 
     mavenPublishing {
-        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "1.0.5")
+        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "1.0.6")
 
         pom {
             name.set("mqtt-manager")
             description.set("A description of what my library does.")
-            inceptionYear.set("2020")
+            inceptionYear.set("2023")
             url.set("https://github.com/hoangchungk53qx1/mqtt-manager/tree/main/mqttworker")
             licenses {
                 license {
