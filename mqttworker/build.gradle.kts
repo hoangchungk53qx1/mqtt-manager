@@ -114,9 +114,9 @@ dependencies {
                 }
             }
             scm {
-                url.set("https://github.com/hoangchungk53qx1/mqtt-manager.git")
-                connection.set("https://github.com/hoangchungk53qx1/mqtt-manager.git")
-                developerConnection.set("https://github.com/hoangchungk53qx1/mqtt-manager.git")
+                url.set("scm:git:git://github.com/hoangchungk53qx1/mqtt-manager.git")
+                connection.set("scm:git:ssh://github.com/hoangchungk53qx1/mqtt-manager")
+                developerConnection.set("https://github.com/hoangchungk53qx1/mqtt-manager")
             }
         }
     }
