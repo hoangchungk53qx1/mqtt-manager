@@ -93,7 +93,7 @@ dependencies {
         coordinates(
             "io.github.hoangchungk53qx1",
             artifactId,
-            "1.0.7"
+            "1.0.8"
         )
 
         pom {
