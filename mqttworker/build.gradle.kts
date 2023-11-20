@@ -4,6 +4,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("maven-publish")
+    id("signing")
     id("com.vanniktech.maven.publish")
 }
 
@@ -80,17 +81,18 @@ dependencies {
       publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
       signAllPublications()
     }
-    publishing {
-        repositories {
-            maven {
-                name = "mqtt-manager"
-                url = uri(layout.buildDirectory.dir("mqttworker"))
-            }
-        }
-    }
+
+//    publishing {
+//        repositories {
+//            maven {
+//                name = "mqtt-manager"
+//                url = uri(layout.buildDirectory.dir("mqttworker"))
+//            }
+//        }
+//    }
 
     mavenPublishing {
-        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "1.0.0")
+        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "1.0.1")
 
         pom {
             name.set("mqtt-manager")
