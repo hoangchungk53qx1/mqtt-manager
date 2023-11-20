@@ -89,38 +89,52 @@ dependencies {
 //    }
 
     mavenPublishing {
-        publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
-        signAllPublications()
-    }
-
-    mavenPublishing {
-        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "1.0.6")
+        val artifactId = "mqtt-manager"
+        coordinates(
+            "io.github.hoangchungk53qx1",
+            artifactId,
+            "1.0.7"
+        )
 
         pom {
-            name.set("mqtt-manager")
-            description.set("A description of what my library does.")
-            inceptionYear.set("2023")
-            url.set("https://github.com/hoangchungk53qx1/mqtt-manager/tree/main/mqttworker")
-            licenses {
-                license {
-                    name.set("The Apache License, Version 2.0")
-                    url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                    distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                }
-            }
-            developers {
-                developer {
-                    id.set("hoangchungk53qx1")
-                    name.set("hoanganhchung")
-                    url.set("https://github.com/hoangchungk53qx1/")
-                }
-            }
-            scm {
-                url.set("scm:git:git://github.com/hoangchungk53qx1/mqtt-manager.git")
-                connection.set("scm:git:ssh://github.com/hoangchungk53qx1/mqtt-manager")
-                developerConnection.set("https://github.com/hoangchungk53qx1/mqtt-manager")
-            }
+            name.set(artifactId)
+            description.set("MqttManager for Android, helps easily manage created clients with methods such as connect, subscrible, unsubcrible Topic")
         }
     }
+
+//    mavenPublishing {
+//        publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+//        signAllPublications()
+//    }
+//
+//    mavenPublishing {
+//        coordinates("io.github.hoangchungk53qx1", "mqtt-manager", "1.0.6")
+//
+//        pom {
+//            name.set("mqtt-manager")
+//            description.set("A description of what my library does.")
+//            inceptionYear.set("2023")
+//            url.set("https://github.com/hoangchungk53qx1/mqtt-manager/tree/main/mqttworker")
+//            licenses {
+//                license {
+//                    name.set("The Apache License, Version 2.0")
+//                    url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+//                    distribution.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+//                }
+//            }
+//            developers {
+//                developer {
+//                    id.set("hoangchungk53qx1")
+//                    name.set("hoanganhchung")
+//                    url.set("https://github.com/hoangchungk53qx1/")
+//                }
+//            }
+//            scm {
+//                url.set("scm:git:git://github.com/hoangchungk53qx1/mqtt-manager.git")
+//                connection.set("scm:git:ssh://github.com/hoangchungk53qx1/mqtt-manager")
+//                developerConnection.set("https://github.com/hoangchungk53qx1/mqtt-manager")
+//            }
+//        }
+//    }
 
 }

@@ -6,6 +6,7 @@ pluginManagement {
             setUrl("https://jitpack.io")
         }
         gradlePluginPortal()
+        maven("https://plugins.gradle.org/m2/")
     }
 }
 dependencyResolutionManagement {
@@ -17,6 +18,7 @@ dependencyResolutionManagement {
             setUrl("https://jitpack.io")
         }
         gradlePluginPortal()
+        maven("https://plugins.gradle.org/m2/")
     }
 }
 
