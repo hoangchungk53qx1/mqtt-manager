@@ -78,8 +78,8 @@ dependencies {
     }
 
     mavenPublishing {
-      publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
-      signAllPublications()
+        publishToMavenCentral(SonatypeHost.S01, automaticRelease = true)
+        signAllPublications()
     }
 
 //    publishing {
