@@ -1,0 +1,1 @@
+sourceset_dependencies = '{":mqttworker:dokkaHtmlPartial/debug":[],":mqttworker:dokkaHtmlPartial/main":[],":mqttworker:dokkaHtmlPartial/release":[]}'

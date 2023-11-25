@@ -1,0 +1,7 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+
+module:mqttworker
+com.chungha.mqttworker
+com.chungha.mqttworker.domain
+com.chungha.mqttworker.worker
