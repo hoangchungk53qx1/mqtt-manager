@@ -5,4 +5,5 @@ plugins {
     id("com.android.library") version "8.1.4" apply false
     id("com.vanniktech.maven.publish") version "0.25.3" apply false
     id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.13.2" apply false
+    id("org.jetbrains.dokka") version "1.9.10"
 }
