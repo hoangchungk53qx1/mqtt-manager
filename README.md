@@ -7,6 +7,9 @@ It has been created to provide reliable open-source implementations of open and 
 applications for Machine-to-Machine (M2M) and Internet of Things (IoT).
 MQTT reflects the inherent physical and cost constraints of device connectivity. Its objectives include effective levels of decoupling between devices and applications, designed to keep markets open and encourage the rapid growth of scalable Web and Enterprise middleware and applications.
 
+## Docs
+
+### 0.x release docs: https://hoangchungk53qx1.github.io/mqtt-manager/docs/0.x
 
 ## Features
 |                     |                    |   |                      |                    |
