@@ -60,7 +60,7 @@ object MqttManager : MqttListener {
      * Update MQTT connection status
      * @param status MqttConnectStatus
      */
-    internal fun updateStatusConnect(status: MqttConnectStatus) {
+    fun updateStatusConnect(status: MqttConnectStatus) {
         connectStatusFlow.update {
             status
         }
