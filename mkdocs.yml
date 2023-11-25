@@ -1,0 +1,46 @@
+site_name: mqtt-manager
+site_url: https://hoangchungk53qx1.github.io/mqtt-manager/docs/0.x
+repo_name: mqtt-manager
+repo_url: https://github.com/hoangchungk53qx1/mqtt-manager
+site_description: "MqttManager for Android, helps easily manage created clients with methods such as connect, subscrible, unsubcrible Topic."
+site_author: HoangAnhChung
+remote_branch: gh-pages
+edit_uri: edit/main/docs/
+
+copyright: 'Copyright &copy; 2023 Hoang Anh Chung.'
+
+theme:
+  name: 'material'
+  favicon: images/mqtt-image.jpeg
+  logo: images/mqtt-image.jpeg
+  palette:
+    primary: 'deep purple'
+    accent: 'white'
+  features:
+    - toc.integrate
+
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - smarty
+  - codehilite:
+      guess_lang: false
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tilde
+  - tables
+
+nav:
+  - 'Overview': index.md
+  - 'MQTT WORKER': mqttworker.md
+  - 'API': API
