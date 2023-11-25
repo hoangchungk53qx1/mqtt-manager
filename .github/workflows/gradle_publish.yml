@@ -11,15 +11,13 @@ on:
   release:
     types: [created]
 
-permissions:
-  contents: write
-
 jobs:
   build:
 
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      pull-requests: write
+      contents: write
       packages: write
 
     steps:

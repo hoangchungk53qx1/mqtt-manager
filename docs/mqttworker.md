@@ -20,7 +20,7 @@ dependencyResolutionManagement {
 ```kotlin
 // build.gradle.kts
 dependencies {
-  implementation("io.github.hoangchungk53qx1:mqtt-manager:1.1.3")
+  implementation("io.github.hoangchungk53qx1:mqtt-manager:1.1.4")
 }
 ```
 
