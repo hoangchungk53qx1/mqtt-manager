@@ -61,7 +61,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
     implementation("com.jakewharton.timber:timber:5.0.1")
-    implementation("io.github.hoangchungk53qx1:mqtt-manager:1.1.4")
+    implementation("io.github.hoangchungk53qx1:mqtt-manager:1.1.6")
 
 
 }
