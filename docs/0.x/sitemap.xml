@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://hoangchungk53qx1.github.io/mqtt-manager/docs/0.x/</loc>
-         <lastmod>2023-11-25</lastmod>
+         <lastmod>2024-01-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://hoangchungk53qx1.github.io/mqtt-manager/docs/0.x/mqttworker/</loc>
-         <lastmod>2023-11-25</lastmod>
+         <lastmod>2024-01-11</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
