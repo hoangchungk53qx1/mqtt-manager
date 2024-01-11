@@ -20,6 +20,7 @@ public final class com/chungha/mqttworker/MqttManager : com/chungha/mqttworker/w
 	public fun disconnect ()V
 	public final fun getConnectStatusState ()Lkotlinx/coroutines/flow/StateFlow;
 	public final fun getMessageState ()Lkotlinx/coroutines/flow/StateFlow;
+	public final fun getMessageStateFlow ()Lkotlinx/coroutines/flow/SharedFlow;
 	public fun subscribeListTopic (Ljava/util/List;)V
 	public fun unSubscribeListTopic (Ljava/util/List;)V
 	public final fun updateStatusConnect (Lcom/chungha/mqttworker/MqttConnectStatus;)V

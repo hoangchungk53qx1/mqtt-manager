@@ -34,13 +34,16 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.flow.update
+import kotlinx.coroutines.launch
 
 /**
  * MQTT Manager
@@ -51,7 +54,9 @@ object MqttManager : MqttListener {
     private val connectStatusFlow = MutableStateFlow(value = MqttConnectStatus.DISCONNECTED)
 
     // Get Message from callback client
-    private val messageFlow = Channel<MqttMessage>(capacity = Channel.UNLIMITED)
+    // ShareFlow broadcast to multiple subscribers
+    private val _messageFlow = MutableSharedFlow<MqttMessage>()
+    val messageStateFlow = _messageFlow.asSharedFlow()
 
     // Scope run coroutine
     private val receiveScope = CoroutineScope(context = Dispatchers.Main + SupervisorJob())
@@ -85,7 +90,9 @@ object MqttManager : MqttListener {
      * @param message String
      */
     internal fun receiveMessage(topic: String, message: String) {
-        messageFlow.trySend(element = MqttMessage(topic = topic, message = message))
+        receiveScope.launch {
+            _messageFlow.emit(MqttMessage(topic = topic, message = message))
+        }
     }
 
     /**
@@ -93,8 +100,7 @@ object MqttManager : MqttListener {
      * @return StateFlow<MqttMessage>
      */
     val messageState: StateFlow<MqttMessage>
-        get() = messageFlow
-            .receiveAsFlow()
+        get() = _messageFlow
             .stateIn(
                 scope = receiveScope,
                 started = SharingStarted.Eagerly,
