@@ -60,7 +60,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
-    implementation("com.github.hannesa2:paho.mqtt.android:4.2")
+    implementation("com.github.hannesa2:paho.mqtt.android:4.2.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
 
 }
